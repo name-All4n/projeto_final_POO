@@ -20,6 +20,6 @@ public class ExercicioMusculacao implements Exercicio {
 
     @Override
     public String getIntrucao() {
-        return String.format("%d Séries de 5d Repetições", series, repeticoes);
+        return String.format("%d Séries de %d Repetições", series, repeticoes);
     }
 }
