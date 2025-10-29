@@ -19,7 +19,7 @@ public abstract class Plano {
     public void setId(int id) {
         this.id = id;
     }
-    public double getPrecoBase() {
+    public double getPreco() {
         return preco;
     }
 }

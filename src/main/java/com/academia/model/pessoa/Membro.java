@@ -1,4 +1,4 @@
-package com.academia.model.pessoa;
+package com.academia.model.pess1oa;
 
 public class Membro {
 }

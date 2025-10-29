@@ -22,4 +22,12 @@ public class ExercicioMusculacao implements Exercicio {
     public String getIntrucao() {
         return String.format("%d Séries de %d Repetições", series, repeticoes);
     }
+
+    @Override
+    public String toString() {
+        return  "{nome='" + nome + '\'' +
+                ", series=" + series +
+                ", repeticoes=" + repeticoes +
+                "}";
+    }
 }

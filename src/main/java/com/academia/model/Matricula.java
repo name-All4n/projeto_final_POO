@@ -14,8 +14,9 @@ public class Matricula {
 
     public Matricula(Plano plano) {
         this.plano = plano;
-        this.dataMatricula = new Date();
+        this.dataMatricula = new Date(); //pegua a data de hoje
 
+        //define a data que a data de vencimento é após 30 dias
         Calendar c = Calendar.getInstance();
         c.setTime(this.dataMatricula);
         c.add(Calendar.DAY_OF_MONTH, 30);
@@ -32,6 +33,7 @@ public class Matricula {
         this.plano = plano;
     }
 
+    //vai ser usado na classe da Catraca para determianr quais matriculas estão vencidas
     public boolean isAtiva() {
         return new Date().before(this.dataVencimento);
     }
