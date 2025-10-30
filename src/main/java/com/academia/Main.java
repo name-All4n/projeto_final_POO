@@ -2,6 +2,11 @@ package com.academia;
 
 //classe de para testes
 
+import com.academia.Repository.MembroRepository;
+import com.academia.model.Matricula;
+import com.academia.model.pessoa.Membro;
+import com.academia.model.plano.Plano;
+import com.academia.model.plano.PlanoMusculacao;
 import com.academia.model.treino.ExercicioMusculacao;
 import com.academia.model.treino.FichaDeTreino;
 
@@ -15,5 +20,14 @@ public class Main {
         fichaDeTreino.adicionarExercicio(new ExercicioMusculacao("supino inclinado", 4, 12));
         fichaDeTreino.adicionarExercicio(new ExercicioMusculacao("supino reto", 4, 12));
         System.out.println(fichaDeTreino.getExercicio());
+
+        Membro allan = new Membro("Allan", "123.456.789-10");
+        MembroRepository membroRepository = new MembroRepository();
+        Membro joao = new Membro("Joao", "123.456.789-20");
+        membroRepository.salvar(allan);
+        membroRepository.salvar(joao);
+        allan.setMatricula(new Matricula(new PlanoMusculacao()));
+        System.out.println(membroRepository.listarMembros());
+
     }
 }

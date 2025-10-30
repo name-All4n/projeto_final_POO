@@ -1,6 +1,6 @@
 package com.academia.model.pessoa;
 
-public class Pessoa {
+public abstract class Pessoa {
     private int id;
     private String nome;
     private String cpf;

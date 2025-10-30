@@ -1,4 +1,50 @@
-package com.academia.model.pess1oa;
+package com.academia.model.pessoa;
 
-public class Membro {
+import com.academia.model.Matricula;
+import com.academia.model.pessoa.Pessoa;
+import com.academia.model.treino.FichaDeTreino;
+
+public class Membro extends Pessoa {
+    private Matricula matricula;
+    private FichaDeTreino fichaDeTreino;
+
+    public Membro () {
+        super();
+    }
+
+    public Membro(String nome, String cpf) {
+        super(nome, cpf);
+    }
+
+    public Matricula getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(Matricula matricula) {
+        this.matricula = matricula;
+    }
+
+    public FichaDeTreino getFichaDeTreino() {
+        return fichaDeTreino;
+    }
+
+    public void setFichaDeTreino(FichaDeTreino fichaDeTreino) {
+        this.fichaDeTreino = fichaDeTreino;
+    }
+
+    @Override
+    public String toString() {
+        String nome = getNome(); // herdado de Pessoa
+        String plano = (matricula != null && matricula.getPlano() != null)
+                ? matricula.getPlano().getNome()
+                : "Sem plano";
+        String vencimento = (matricula != null && matricula.getDataVencimento() != null)
+                ? matricula.getDataVencimento().toString()
+                : "Sem vencimento";
+
+        return "{Membro: " + nome +
+                " | Plano: " + plano +
+                " | Vencimento: " + vencimento +
+                "}";
+    }
 }
