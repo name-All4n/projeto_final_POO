@@ -7,6 +7,7 @@ import com.academia.model.Matricula;
 import com.academia.model.pessoa.Membro;
 import com.academia.model.plano.Plano;
 import com.academia.model.plano.PlanoMusculacao;
+import com.academia.model.plano.PlanoPremium;
 import com.academia.model.treino.ExercicioMusculacao;
 import com.academia.model.treino.FichaDeTreino;
 
@@ -28,6 +29,9 @@ public class Main {
         membroRepository.salvar(joao);
         allan.setMatricula(new Matricula(new PlanoMusculacao()));
         System.out.println(membroRepository.listarMembros());
-
+        System.out.println(membroRepository.procurarMembro("123.456.789-10"));
+        membroRepository.atualizar("123.456.789-10", "Allan Pedro", new PlanoPremium());
+        joao.setMatricula(new Matricula(new PlanoMusculacao()));
+        System.out.println(membroRepository.listarMembros());
     }
 }

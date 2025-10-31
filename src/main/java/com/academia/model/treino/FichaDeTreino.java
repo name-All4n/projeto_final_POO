@@ -19,6 +19,11 @@ public class FichaDeTreino {
         this.exercicio.add(exercicio);
     }
 
+    //adicona uma lista de exercícios na lista
+    public void adiconarExercicios(List<Exercicio> exercicios) {
+        this.exercicio.addAll(exercicios);
+    }
+
     //mostrar os exercícios da lista
     public List<Exercicio> getExercicio() {
         return exercicio;

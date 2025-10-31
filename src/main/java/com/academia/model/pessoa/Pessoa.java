@@ -1,7 +1,6 @@
 package com.academia.model.pessoa;
 
 public abstract class Pessoa {
-    private int id;
     private String nome;
     private String cpf;
 
@@ -12,12 +11,6 @@ public abstract class Pessoa {
         this.cpf = cpf;
     }
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getNome() {
         return nome;
     }
