@@ -3,6 +3,7 @@ package com.academia;
 //classe de para testes
 
 import com.academia.Repository.MembroRepository;
+import com.academia.Repository.PlanoRepository;
 import com.academia.model.Matricula;
 import com.academia.model.pessoa.Membro;
 import com.academia.model.plano.Plano;
@@ -36,6 +37,13 @@ public class Main {
         membroRepository.atualizar("123.456.789-10", "Allan Pedro", new PlanoPremium());
         joao.setMatricula(new Matricula(new PlanoMusculacao()));
         System.out.println(membroRepository.listarMembros());
+
+        PlanoRepository planos = new PlanoRepository();
+        planos.salvar(new PlanoMusculacao());
+        planos.salvar(new PlanoPremium());
+        System.out.println(planos.buscarPlano("Plano Musculação"));
+        System.out.println(planos.listarPlanos());
+
         MontadorDeFichaTreino montarFicha1 = new MontadorFichaHipertrofia();
         MontadorDeFichaTreino montarFicha2 = new MontadorFichaEmagrecimento();
         FichaDeTreino fichaDeTreino1 = montarFicha1.montar(allan);

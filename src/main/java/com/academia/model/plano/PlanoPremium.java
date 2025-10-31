@@ -10,4 +10,14 @@ public class PlanoPremium extends Plano {
     public double calcularMensalidade() {
         return this.preco + this.taxaPiscina;
     }
+
+    @Override
+    public String toString() {
+        return "PlanoPremium{" +
+                "nome='" + nome + '\'' +
+                ", preco=" + preco +
+                ", taxaPiscina=" + taxaPiscina +
+                ", total= " + calcularMensalidade() +
+                '}';
+    }
 }

@@ -9,4 +9,12 @@ public class PlanoMusculacao extends Plano{
     public double calcularMensalidade() {
         return this.preco;
     }
+
+    @Override
+    public String toString() {
+        return "PlanoMusculacao{" +
+                "nome='" + nome + '\'' +
+                ", preco=" + preco +
+                '}';
+    }
 }
