@@ -1,10 +1,12 @@
 package com.academia.model.treino;
 
-public class ExecicioAerobico implements Exercicio {
+public class ExercicioAerobico implements Exercicio {
     private String nome;
     private int minutos;
 
-    public ExecicioAerobico(String nome, int minutos) {
+    public ExercicioAerobico() {}
+
+    public ExercicioAerobico(String nome, int minutos) {
         this.nome = nome;
         this.minutos = minutos;
     }

@@ -10,7 +10,7 @@ public class MontadorFichaHipertrofia extends MontadorDeFichaTreino{
 
     @Override
     protected List<Exercicio> adiconarExerciciosPrincipais() {
-        List<Exercicio> exercicios = new ArrayList<Exercicio>();
+        List<Exercicio> exercicios = new ArrayList<>();
         exercicios.add(new ExercicioMusculacao("Supino Reto", 4, 12));
         exercicios.add(new ExercicioMusculacao("Triceps com Corda", 4, 12));
         return exercicios;
