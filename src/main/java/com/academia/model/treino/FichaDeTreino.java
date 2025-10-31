@@ -33,4 +33,12 @@ public class FichaDeTreino {
     public String getNomeAluno() {
         return nomeAluno;
     }
+
+    @Override
+    public String toString() {
+        return "FichaDeTreino{" +
+                "nomeAluno='" + nomeAluno + '\'' +
+                ", exercicio=" + exercicio +
+                '}';
+    }
 }

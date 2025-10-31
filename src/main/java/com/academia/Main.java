@@ -10,6 +10,8 @@ import com.academia.model.plano.PlanoMusculacao;
 import com.academia.model.plano.PlanoPremium;
 import com.academia.model.treino.ExercicioMusculacao;
 import com.academia.model.treino.FichaDeTreino;
+import com.academia.services.templatemethod.MontadorDeFichaTreino;
+import com.academia.services.templatemethod.MontadorFichaHipertrofia;
 
 public class Main {
     public static void main(String[] args) {
@@ -33,5 +35,9 @@ public class Main {
         membroRepository.atualizar("123.456.789-10", "Allan Pedro", new PlanoPremium());
         joao.setMatricula(new Matricula(new PlanoMusculacao()));
         System.out.println(membroRepository.listarMembros());
+        MontadorDeFichaTreino montarFicha = new MontadorFichaHipertrofia();
+        FichaDeTreino fichaDeTreino1 = montarFicha.montar(allan);
+        allan.setFichaDeTreino(fichaDeTreino1);
+        System.out.println(allan.getFichaDeTreino());
     }
 }
