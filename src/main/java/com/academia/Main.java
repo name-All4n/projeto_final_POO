@@ -2,9 +2,11 @@ package com.academia;
 
 //classe de para testes
 
+import com.academia.Repository.InstrutorRepository;
 import com.academia.Repository.MembroRepository;
 import com.academia.Repository.PlanoRepository;
 import com.academia.model.Matricula;
+import com.academia.model.pessoa.Instrutor;
 import com.academia.model.pessoa.Membro;
 import com.academia.model.plano.Plano;
 import com.academia.model.plano.PlanoMusculacao;
@@ -46,11 +48,15 @@ public class Main {
 
         MontadorDeFichaTreino montarFicha1 = new MontadorFichaHipertrofia();
         MontadorDeFichaTreino montarFicha2 = new MontadorFichaEmagrecimento();
-        FichaDeTreino fichaDeTreino1 = montarFicha1.montar(allan);
-        FichaDeTreino fichaDeTreino2 = montarFicha2.montar(joao);
-        allan.setFichaDeTreino(fichaDeTreino1);
-        joao.setFichaDeTreino(fichaDeTreino2);
+        Instrutor bruno  = new Instrutor("Bruno", "987.654.321-00", "1234-G/SP", "Musculação");
+        bruno.montarFicha(allan, montarFicha1);
+        bruno.montarFicha(joao, montarFicha2);
         System.out.println(allan.getFichaDeTreino());
         System.out.println(joao.getFichaDeTreino());
+        System.out.println(bruno);
+        System.out.println(bruno.getAlunos());
+        InstrutorRepository instrutorRepository = new InstrutorRepository();
+        instrutorRepository.salvarInstrutor(bruno);
+        System.out.println(instrutorRepository.listarInstrutores());
     }
 }
