@@ -46,4 +46,13 @@ public class MembroRepository {
         System.out.println("Membro com CPF " + cpf + " não encontrado.");
     }
 
+    public void renovarMatricula(String cpf) {
+        Membro m = procurarMembro(cpf);
+        if (m != null && m.getMatricula() != null) {
+            m.getMatricula().renovar();
+        } else {
+            System.out.println("Membro não encontrado ou sem matrícula.");
+        }
+    }
+
 }

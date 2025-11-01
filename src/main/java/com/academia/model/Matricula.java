@@ -33,6 +33,16 @@ public class Matricula {
         this.plano = plano;
     }
 
+    //pensei em colocar uma classe pra a Renovação da Matrícula
+    public void renovar() {
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        c.add(Calendar.DAY_OF_MONTH, 30);
+        this.dataVencimento = c.getTime();
+        System.out.println("💪 Matrícula renovada! Novo vencimento: " + dataVencimento);
+    }
+
+
     //vai ser usado na classe da Catraca para determianr quais matriculas estão vencidas
     public boolean isAtiva() {
         return new Date().before(this.dataVencimento);
