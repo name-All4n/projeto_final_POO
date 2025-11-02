@@ -8,11 +8,11 @@ import com.academia.Repository.PlanoRepository;
 import com.academia.model.Matricula;
 import com.academia.model.pessoa.Instrutor;
 import com.academia.model.pessoa.Membro;
-import com.academia.model.plano.Plano;
 import com.academia.model.plano.PlanoMusculacao;
 import com.academia.model.plano.PlanoPremium;
 import com.academia.model.treino.ExercicioMusculacao;
 import com.academia.model.treino.FichaDeTreino;
+import com.academia.services.singleton.CatracaVirtual;
 import com.academia.services.templatemethod.MontadorDeFichaTreino;
 import com.academia.services.templatemethod.MontadorFichaEmagrecimento;
 import com.academia.services.templatemethod.MontadorFichaHipertrofia;
@@ -58,5 +58,8 @@ public class Main {
         InstrutorRepository instrutorRepository = new InstrutorRepository();
         instrutorRepository.salvarInstrutor(bruno);
         System.out.println(instrutorRepository.listarInstrutores());
+
+        CatracaVirtual catraca = CatracaVirtual.getInstancia();
+        catraca.liberarAcesso(allan);
     }
 }
