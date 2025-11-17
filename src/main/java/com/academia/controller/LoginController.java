@@ -1,40 +1,40 @@
-package com.academia.controller;
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.academia.frontend.controller.LoginController"
+            prefWidth="600" prefHeight="400" style="-fx-padding: 20;">
+    <VBox spacing="12" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+        <Label text="Bem-vindo — Sistema da Academia" style="-fx-font-size: 18;" />
+        <HBox spacing="8">
+            <Label text="Tipo:"/>
+            <ChoiceBox fx:id="choiceTipo" prefWidth="180"/>
+        </HBox>
 
-public class LoginController {
+        <HBox spacing="8">
+            <Label text="CPF:"/>
+            <TextField fx:id="cpfField" HBox.hgrow="ALWAYS"/>
+        </HBox>
 
-    @FXML
-    private TextField cpfField;
+        <HBox spacing="8">
+            <Button text="Entrar" onAction="#onEntrar" />
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Sair" onAction="#onSair" />
+        </HBox>
 
-    @FXML
-    private PasswordField senhaField;
+        <Separator/>
 
-    @FXML
-    private Label errorLabel;
+        <Label text="Ações rápidas (após login)" style="-fx-font-size: 12; -fx-opacity: 0.8;"/>
+        <HBox spacing="8">
+            <Button text="Abrir Dashboard" onAction="#openDashboard" fx:id="btnOpenDashboard" disable="true"/>
+            <Button text="Abrir Pagamentos" onAction="#openPayments" fx:id="btnOpenPayments" disable="true"/>
+        </HBox>
 
-    @FXML
-    private void handleLogin() {
+        <TextArea fx:id="outputArea" prefHeight="180" editable="false"/>
+    </VBox>
+</AnchorPane>
 
-        String cpf = cpfField.getText();
-        String senha = senhaField.getText();
-
-        if ("12345678900".equals(cpf) && "admin".equals(senha)) {
-            try {
-                FXMLLoader loader = new FXMLLoader(
-                        getClass().getResource("/fxml/DashboardView.fxml")
-                );
-
-                Scene scene = new Scene(loader.load());
-                Stage stage = (Stage) cpfField.getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
 
             } catch (Exception e) {
                 e.printStackTrace();
