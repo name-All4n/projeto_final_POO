@@ -1,40 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+package com.academia.frontend.controller;
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.academia.frontend.controller.LoginController"
-            prefWidth="600" prefHeight="400" style="-fx-padding: 20;">
-    <VBox spacing="12" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
-        <Label text="Bem-vindo — Sistema da Academia" style="-fx-font-size: 18;" />
-        <HBox spacing="8">
-            <Label text="Tipo:"/>
-            <ChoiceBox fx:id="choiceTipo" prefWidth="180"/>
-        </HBox>
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
 
-        <HBox spacing="8">
-            <Label text="CPF:"/>
-            <TextField fx:id="cpfField" HBox.hgrow="ALWAYS"/>
-        </HBox>
+public class LoginController {
 
-        <HBox spacing="8">
-            <Button text="Entrar" onAction="#onEntrar" />
-            <Region HBox.hgrow="ALWAYS"/>
-            <Button text="Sair" onAction="#onSair" />
-        </HBox>
+    @FXML private TextField usuarioField;
+    @FXML private PasswordField senhaField;
+    @FXML private Label mensagemErro;
 
-        <Separator/>
+    @FXML
+    private void onLogin() {
+        String user = usuarioField.getText();
+        String pass = senhaField.getText();
 
-        <Label text="Ações rápidas (após login)" style="-fx-font-size: 12; -fx-opacity: 0.8;"/>
-        <HBox spacing="8">
-            <Button text="Abrir Dashboard" onAction="#openDashboard" fx:id="btnOpenDashboard" disable="true"/>
-            <Button text="Abrir Pagamentos" onAction="#openPayments" fx:id="btnOpenPayments" disable="true"/>
-        </HBox>
+        // Login simples (pode trocar depois por autenticação real)
+        if (user.equals("admin") && pass.equals("123")) {
+            abrirDashboard();
+        } else {
+            mensagemErro.setText("Usuário ou senha incorretos.");
+        }
+    }
 
-        <TextArea fx:id="outputArea" prefHeight="180" editable="false"/>
-    </VBox>
-</AnchorPane>
+    private void abrirDashboard() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Dashboard.fxml"));
+            Scene scene = new Scene(loader.load());
 
+            Stage stage = (Stage) usuarioField.getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("Academia - Dashboard");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 
             } catch (Exception e) {
                 e.printStackTrace();
