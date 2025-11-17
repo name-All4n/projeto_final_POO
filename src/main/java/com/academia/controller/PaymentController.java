@@ -1,6 +1,6 @@
-package com.academia.frontend.controller;
+package com.academia.controller;
 
-import com.academia.frontend.service.ServiceFacade;
+import com.academia.services.ServiceFacade;
 import com.academia.model.pessoa.Membro;
 import com.academia.model.plano.Plano;
 import javafx.collections.FXCollections;
@@ -92,7 +92,7 @@ public class PaymentController {
         sb.append("\\nPagamento processado (registro em memória apenas):\\n")
           .append(" - Membro: ").append(m.getNome()).append("\\n")
           .append(" - Plano: ").append(p.getNome()).append("\\n")
-          .append(" - Valor: ").append(NumberFormat.getCurrencyInstance(new Locale(\"pt\",\"BR\")).format(amount));
+          .append(" - Valor: ").append(NumberFormat.getCurrencyInstance(new Locale("pt","BR")).format(amount));
 
         outputArea.setText(sb.toString());
 

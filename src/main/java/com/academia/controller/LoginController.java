@@ -1,4 +1,4 @@
-package com.academia.frontend.controller;
+package com.academia.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

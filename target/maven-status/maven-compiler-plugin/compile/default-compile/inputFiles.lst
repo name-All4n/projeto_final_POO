@@ -3,11 +3,12 @@ C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\controller\A
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\controller\DashboardController.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\controller\InstrutoresController.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\controller\LoginController.java
-C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\controller\PagamentosController.java
+C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\controller\PaymentController.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\controller\PlanosController.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\controller\TreinosController.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\Main.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\model\Matricula.java
+C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\model\Pagamento.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\model\pessoa\Instrutor.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\model\pessoa\Membro.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\model\pessoa\Pessoa.java
@@ -21,6 +22,7 @@ C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\model\treino
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\Repository\InstrutorRepository.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\Repository\MembroRepository.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\Repository\PlanoRepository.java
+C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\services\ServiceFacade.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\services\singleton\CatracaVirtual.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\services\templatemethod\MontadorDeFichaTreino.java
 C:\Users\allan\Desktop\projeto_final_POO\src\main\java\com\academia\services\templatemethod\MontadorFichaEmagrecimento.java
