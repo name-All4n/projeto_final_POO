@@ -239,9 +239,7 @@ public class InstrutoresController {
     private void handleSalvarFichaPersonalizada() {
         if (instrutorSelecionado != null && alunoSelecionadoParaTreino != null && fichaEmEdicao != null) {
 
-            alunoSelecionadoParaTreino.setFichaDeTreino(fichaEmEdicao);
-
-            membroRepository.atualizar(alunoSelecionadoParaTreino.getCpf(), null, null);
+            membroRepository.atualizarFicha(alunoSelecionadoParaTreino.getCpf(), fichaEmEdicao);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Ficha personalizada salva com sucesso para " + alunoSelecionadoParaTreino.getNome());
             alert.show();

@@ -5,6 +5,7 @@ import com.academia.model.pessoa.Membro;
 import com.academia.model.plano.Plano;
 
 import com.academia.model.treino.Exercicio;
+import com.academia.model.treino.FichaDeTreino;
 import com.academia.services.adapter.ExercicioTypeAdapter;
 import com.academia.services.adapter.PlanoTypeAdapter;
 import com.google.gson.Gson;
@@ -95,6 +96,18 @@ public class MembroRepository {
             }
         }
         System.out.println("Membro com CPF " + cpf + " não encontrado.");
+    }
+
+    public void atualizarFicha(String cpf, FichaDeTreino novaFicha) {
+        Membro membro = procurarMembro(cpf);
+
+        if (membro != null) {
+            membro.setFichaDeTreino(novaFicha);
+
+            salvarNoArquivo();
+
+            System.out.println("Ficha de treino atualizada para o membro: " + membro.getNome());
+        }
     }
 
     public void renovarMatricula(String cpf) {

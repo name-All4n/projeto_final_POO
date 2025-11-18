@@ -1,0 +1,32 @@
+[
+  {
+    "matricula": {
+      "plano": {
+        "nome": "Plano Musculação",
+        "preco": 100.0,
+        "CLASSE_TYPE": "com.academia.model.plano.PlanoMusculacao"
+      },
+      "dataMatricula": "Nov 18, 2025, 12:54:44 AM",
+      "dataVencimento": "Dec 18, 2025, 12:54:44 AM"
+    },
+    "fichaDeTreino": {
+      "nomeAluno": "Allan",
+      "exercicio": [
+        {
+          "nome": "Supino Reto",
+          "series": 4,
+          "repeticoes": 12,
+          "CLASSE_TYPE": "com.academia.model.treino.ExercicioMusculacao"
+        },
+        {
+          "nome": "Triceps com Corda",
+          "series": 4,
+          "repeticoes": 12,
+          "CLASSE_TYPE": "com.academia.model.treino.ExercicioMusculacao"
+        }
+      ]
+    },
+    "nome": "Allan",
+    "cpf": "123456789"
+  }
+]
