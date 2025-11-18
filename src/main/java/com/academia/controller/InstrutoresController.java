@@ -1,4 +1,4 @@
-package com.academia.app;
+package com.academia.controller;
 
 import com.academia.Repository.InstrutorRepository;
 import com.academia.Repository.MembroRepository;
@@ -8,7 +8,6 @@ import com.academia.model.treino.ExercicioMusculacao;
 import com.academia.model.treino.FichaDeTreino;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;

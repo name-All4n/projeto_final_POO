@@ -1,4 +1,4 @@
-package com.academia.app;
+package com.academia.controller;
 
 import com.academia.Repository.InstrutorRepository;
 import com.academia.model.pessoa.Instrutor;

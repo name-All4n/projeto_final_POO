@@ -1,4 +1,4 @@
-package com.academia.app;
+package com.academia.controller;
 
 import com.academia.Repository.MembroRepository;
 import com.academia.Repository.PlanoRepository;
