@@ -1,27 +1,9 @@
 [
   {
     "cref": "0002",
-    "especialidade": "Musculação",
-    "membrosSupervisionados": [
-      {
-        "matricula": {
-          "plano": {
-            "nome": "Plano Musculação",
-            "preco": 100.0,
-            "CLASSE_TYPE": "com.academia.model.plano.PlanoMusculacao"
-          },
-          "dataMatricula": "Nov 18, 2025, 12:45:02 AM",
-          "dataVencimento": "Dec 18, 2025, 12:45:02 AM"
-        },
-        "fichaDeTreino": {
-          "nomeAluno": "Allan",
-          "exercicio": []
-        },
-        "nome": "Allan",
-        "cpf": "123456789"
-      }
-    ],
+    "especialidade": "Natação",
+    "membrosSupervisionados": [],
     "nome": "Julia",
-    "cpf": "987654321"
+    "cpf": "987.654.321-12"
   }
 ]

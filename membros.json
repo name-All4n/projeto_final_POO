@@ -6,27 +6,10 @@
         "preco": 100.0,
         "CLASSE_TYPE": "com.academia.model.plano.PlanoMusculacao"
       },
-      "dataMatricula": "Nov 18, 2025, 12:54:44 AM",
-      "dataVencimento": "Dec 18, 2025, 12:54:44 AM"
-    },
-    "fichaDeTreino": {
-      "nomeAluno": "Allan",
-      "exercicio": [
-        {
-          "nome": "Supino Reto",
-          "series": 4,
-          "repeticoes": 12,
-          "CLASSE_TYPE": "com.academia.model.treino.ExercicioMusculacao"
-        },
-        {
-          "nome": "Triceps com Corda",
-          "series": 4,
-          "repeticoes": 12,
-          "CLASSE_TYPE": "com.academia.model.treino.ExercicioMusculacao"
-        }
-      ]
+      "dataMatricula": "Nov 18, 2025, 5:48:42 PM",
+      "dataVencimento": "Dec 18, 2025, 5:48:42 PM"
     },
     "nome": "Allan",
-    "cpf": "123456789"
+    "cpf": "123.456.789-10"
   }
 ]

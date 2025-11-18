@@ -60,16 +60,13 @@ public class MembrosControler {
     }
 
     private void carregarDadosIniciais() {
-        // 1. Carregar Membros na Tabela
         List<Membro> listaMembros = membroRepository.listarMembros();
         membrosVisiveis = FXCollections.observableArrayList(listaMembros);
         tabelaMembros.setItems(membrosVisiveis);
 
-        // 2. Carregar Planos no ComboBox de Cadastro
         List<Plano> listaPlanos = planoRepository.listarPlanos();
         comboPlanos.setItems(FXCollections.observableArrayList(listaPlanos));
 
-        // Formatar como o Plano aparece no ComboBox (mostrar apenas o nome)
         comboPlanos.setConverter(new StringConverter<Plano>() {
             @Override
             public String toString(Plano p) { return (p != null) ? p.getNome() : ""; }
@@ -77,13 +74,9 @@ public class MembrosControler {
             public Plano fromString(String s) { return null; }
         });
 
-        // 3. Carregar Tipos de Treino
         comboTipoTreino.setItems(FXCollections.observableArrayList("Hipertrofia", "Emagrecimento"));
     }
 
-    /**
-     * Configura o evento de "Clique" na tabela
-     */
     private void configurarListenerDeSelecao() {
         tabelaMembros.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> {
@@ -184,7 +177,6 @@ public class MembrosControler {
         if (membroSelecionado != null) {
             membroRepository.renovarMatricula(membroSelecionado.getCpf());
 
-            // Atualiza a visualização dos detalhes na hora
             mostrarDetalhesMembro(membroSelecionado);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -207,19 +199,11 @@ public class MembrosControler {
             }
 
             if (montador != null) {
-                // 1. Gera a ficha
                 FichaDeTreino novaFicha = montador.montar(membroSelecionado);
-                // 2. Atribui ao membro
                 membroSelecionado.setFichaDeTreino(novaFicha);
-                // 3. SALVA NO ARQUIVO JSON (Importante!)
-                // Como o membroRepository salva a lista inteira quando chamamos salvar(),
-                // uma forma rápida de forçar o update é remover e adicionar, ou criar um método 'atualizar' melhor.
-                // Mas como o objeto 'membroSelecionado' é uma REFERÊNCIA ao objeto que está dentro da lista do Repositório,
-                // basta chamarmos um método que force a gravação do arquivo.
-                // Vamos usar um truque simples: atualizar com os mesmos dados.
+
                 membroRepository.atualizar(membroSelecionado.getCpf(), membroSelecionado.getNome(), null);
 
-                // 4. Atualiza a tela
                 mostrarDetalhesMembro(membroSelecionado);
             }
         }

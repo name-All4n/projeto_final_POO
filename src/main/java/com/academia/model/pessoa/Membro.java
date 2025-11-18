@@ -39,7 +39,7 @@ public class  Membro extends Pessoa {
     public String toString() {
         SimpleDateFormat formato = new SimpleDateFormat("EEEE dd MMM", new Locale("pt", "BR"));
 
-        String nome = getNome(); // herdado de Pessoa
+        String nome = getNome();
         String plano = (matricula != null && matricula.getPlano() != null)
                 ? matricula.getPlano().getNome()
                 : "Sem plano";
