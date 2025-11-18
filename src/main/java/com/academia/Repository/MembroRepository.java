@@ -4,6 +4,9 @@ import com.academia.model.Matricula;
 import com.academia.model.pessoa.Membro;
 import com.academia.model.plano.Plano;
 
+import com.academia.model.treino.Exercicio;
+import com.academia.services.adapter.ExercicioTypeAdapter;
+import com.academia.services.adapter.PlanoTypeAdapter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -18,7 +21,11 @@ public class MembroRepository {
     private Gson gson;
 
     public MembroRepository() {
-        this.gson = new GsonBuilder().setPrettyPrinting().create();
+        this.gson = new GsonBuilder()
+                .registerTypeAdapter(Plano.class, new PlanoTypeAdapter())
+                .registerTypeAdapter(Exercicio.class, new ExercicioTypeAdapter())
+                .setPrettyPrinting()
+                .create();
         this.membros = carregarDOArquivo();
     }
 
@@ -59,6 +66,16 @@ public class MembroRepository {
             }
         }
         return null;
+    }
+
+    public boolean removerMembro(String cpf) {
+        boolean removeu = this.membros.removeIf(membro -> membro.getCpf().equals(cpf));
+
+        if (removeu) {
+            salvarNoArquivo();
+            return true;
+        }
+        return false;
     }
 
     public List<Membro> listarMembros() {

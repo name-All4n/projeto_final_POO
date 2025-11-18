@@ -1,5 +1,6 @@
 package com.academia.services.singleton;
 
+import com.academia.model.pessoa.Instrutor;
 import com.academia.model.pessoa.Membro;
 
 public class CatracaVirtual {
@@ -21,6 +22,16 @@ public class CatracaVirtual {
             System.out.println(" Acesso negado! Matrícula vencida.");
             return false;
         }
+    }
+
+    public boolean liberarAcesso(Instrutor instrutor) {
+        if (instrutor != null) {
+            // Aqui você poderia verificar se o instrutor está "ativo" ou de férias,
+            // mas por enquanto vamos dar acesso total.
+            System.out.println("🎓 Acesso liberado para instrutor: " + instrutor.getNome());
+            return true;
+        }
+        return false;
     }
 }
 

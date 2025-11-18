@@ -7,7 +7,7 @@ import com.academia.model.treino.FichaDeTreino;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-public class Membro extends Pessoa {
+public class  Membro extends Pessoa {
     private Matricula matricula;
     private FichaDeTreino fichaDeTreino;
 

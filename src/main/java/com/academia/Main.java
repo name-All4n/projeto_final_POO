@@ -40,12 +40,6 @@ public class Main {
         joao.setMatricula(new Matricula(new PlanoMusculacao()));
         System.out.println(membroRepository.listarMembros());
 
-        PlanoRepository planos = new PlanoRepository();
-        planos.salvar(new PlanoMusculacao());
-        planos.salvar(new PlanoPremium());
-        System.out.println(planos.buscarPlano("Plano Musculação"));
-        System.out.println(planos.listarPlanos());
-
         MontadorDeFichaTreino montarFicha1 = new MontadorFichaHipertrofia();
         MontadorDeFichaTreino montarFicha2 = new MontadorFichaEmagrecimento();
         Instrutor bruno  = new Instrutor("Bruno", "987.654.321-00", "1234-G/SP", "Musculação");
@@ -53,10 +47,7 @@ public class Main {
         bruno.montarFicha(joao, montarFicha2);
         System.out.println(allan.getFichaDeTreino());
         System.out.println(joao.getFichaDeTreino());
-        System.out.println(bruno);
-        System.out.println(bruno.getAlunos());
         InstrutorRepository instrutorRepository = new InstrutorRepository();
-        instrutorRepository.salvarInstrutor(bruno);
         System.out.println(instrutorRepository.listarInstrutores());
 
         CatracaVirtual catraca = CatracaVirtual.getInstancia();
